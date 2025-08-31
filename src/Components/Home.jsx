@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-[60p] bg-[#f3f3f3] lg:px-[110px] px-[20px] py-[40px] lg:py-[60px]">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-[60p] bg-[#f3f3f3] lg:px-[110px] px-[20px] py-[40px] lg:py-[60px] my-6 lg:my-10 rounded-lg">
       <div className=" lg:col-span-2">
         <h1 className="lg:text-[56px] text-[40px] font-bold ">
           Books to freshen up <br /> your bookshelf
