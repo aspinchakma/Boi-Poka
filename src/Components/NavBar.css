@@ -1,0 +1,12 @@
+.navbar a {
+  font-weight: bold;
+  border: 1px solid white;
+}
+
+.navbar .active {
+  color: #23be0a;
+  border: 1px solid #23be0a;
+}
+.navbar {
+  font-family: "Work Sans", sans-serif;
+}
