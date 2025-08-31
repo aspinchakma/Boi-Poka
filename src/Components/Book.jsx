@@ -1,3 +1,5 @@
+import { CiStar } from "react-icons/ci";
+
 const Book = ({ book }) => {
   const { author, bookName, image, category, rating, tags } = book;
   return (
@@ -24,7 +26,10 @@ const Book = ({ book }) => {
         className="flex items-center justify-between"
       >
         <h3>{category}</h3>
-        <p>{rating}</p>
+        <div className="flex gap-2 items-center">
+          <p>{rating}</p>
+          <CiStar className="text-[20px] cursor-pointer" />
+        </div>
       </div>
     </div>
   );
