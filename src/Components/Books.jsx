@@ -18,7 +18,6 @@ const Books = () => {
     loadData();
   }, []);
 
-  console.log(books);
   return (
     <div>
       <h3 className="text-5xl font-bold text-center">Books</h3>
