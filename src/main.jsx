@@ -1,13 +1,30 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Components/Home.jsx";
+import ListedBooks from "./Components/ListedBooks.jsx";
+import PageToRead from "./Components/PageToRead.jsx";
+import Root from "./Components/Root.jsx";
 import "./index.css";
-import Home from "./Pages/Home.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Root />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/listedBooks",
+        element: <ListedBooks />,
+      },
+      {
+        path: "/pagetoread",
+        element: <PageToRead />,
+      },
+    ],
   },
 ]);
 
