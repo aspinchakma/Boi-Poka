@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import { addToLS } from "./Utilities/LocalStorage";
 
 const BookDetails = () => {
   const book = useLoaderData();
@@ -13,9 +14,11 @@ const BookDetails = () => {
     tags,
     totalPages,
     yearOfPublishing,
+    bookId,
   } = book;
-
-  console.log(book);
+  const handleAddBook = (id) => {
+    addToLS(id);
+  };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[48px] my-8">
       <div className="bg-[#f3f3f3] py-[73px] rounded-lg">
@@ -48,20 +51,23 @@ const BookDetails = () => {
         </div>
         <div className="flex gap-10">
           <div>
-            <p>Number of Pages:</p>
-            <p>Publisher:</p>
-            <p>Year of Publishing:</p>
+            <p className="mb-3">Number of Pages:</p>
+            <p className="mb-3">Publisher:</p>
+            <p className="mb-3">Year of Publishing:</p>
             <p>Rating:</p>
           </div>
           <div>
-            <p className="font-bold">{totalPages}</p>
-            <p className="font-bold">{publisher}</p>
-            <p className="font-bold">{yearOfPublishing}</p>
+            <p className="font-bold mb-3">{totalPages}</p>
+            <p className="font-bold mb-3">{publisher}</p>
+            <p className="font-bold mb-3">{yearOfPublishing}</p>
             <p className="font-bold">{rating}</p>
           </div>
         </div>
         <div className="flex items-center gap-2 mt-5">
-          <button className="border-2 border-[#b8b8b8] rounded-lg px-[22px] py-[8px] font-bold">
+          <button
+            onClick={() => handleAddBook(bookId)}
+            className="border-2 border-[#b8b8b8] cursor-pointer rounded-lg px-[22px] py-[8px] font-bold"
+          >
             Read
           </button>
           <button className="border-2 bg-[#50b1c9] border-[#50b1c9] rounded-lg px-[22px] py-[8px] font-bold text-white">

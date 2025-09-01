@@ -1,0 +1,47 @@
+import { Bounce, toast } from "react-toastify";
+
+const loadDataLS = () => {
+  const data = localStorage.getItem("readlist");
+  if (!data) {
+    return [];
+  }
+  const arrayData = JSON.parse(data);
+  return arrayData;
+};
+
+const addToLS = (id) => {
+  const data = loadDataLS();
+  const isInclude = data.includes(id);
+
+  if (!isInclude) {
+    data.push(id);
+    toast.success("Successfull Added !", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  } else {
+    toast.error("Already Added !", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  }
+
+  // add to local storage
+  localStorage.setItem("readlist", JSON.stringify(data));
+};
+
+export { addToLS };
