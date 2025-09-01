@@ -7,6 +7,7 @@ const ListedBooks = () => {
       <h2 className="font-bold text-2xl bg-[#f3f3f3] py-10 text-center rounded-lg mt-8">
         Books
       </h2>
+
       <div className="listedBookContainer my-5 flex">
         <NavLink end to={`/listedBooks`}>
           Read Books
