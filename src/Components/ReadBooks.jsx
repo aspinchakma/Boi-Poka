@@ -68,7 +68,7 @@ const ReadBooks = () => {
               <a>Number of Pages</a>
             </li>
             <li onClick={sortedByPublishedYear}>
-              <a>Publisher Yer</a>
+              <a>Publisher Year</a>
             </li>
           </ul>
         </div>
