@@ -13,6 +13,7 @@ const ReadBook = ({ book }) => {
     yearOfPublishing,
     author,
     totalPages,
+    bookId,
   } = book;
 
   return (
@@ -57,7 +58,10 @@ const ReadBook = ({ book }) => {
               <p className="bg-[#fff3e1] px-[16px] py-[8px] rounded-full text-[#ffac33] ">
                 Rating: {rating}
               </p>
-              <NavLink className="py-2 px-5 bg-[#23be0a] rounded-full text-white">
+              <NavLink
+                to={`/books/${bookId}`}
+                className="py-2 px-5 bg-[#23be0a] rounded-full text-white"
+              >
                 View Details
               </NavLink>
             </div>
