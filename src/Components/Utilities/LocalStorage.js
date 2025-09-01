@@ -44,4 +44,48 @@ const addToLS = (id) => {
   localStorage.setItem("readlist", JSON.stringify(data));
 };
 
-export { addToLS };
+// wish list
+
+const loadWishList = () => {
+  const wishlist = localStorage.getItem("wish-list");
+  if (wishlist) {
+    const wishlistArray = JSON.parse(wishlist);
+    return wishlistArray;
+  } else {
+    return [];
+  }
+};
+
+const addWishListLS = (id) => {
+  const wishList = loadWishList();
+
+  if (wishList.includes(id)) {
+    toast.error("Already Added !", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  } else {
+    wishList.push(id);
+    localStorage.setItem("wish-list", JSON.stringify(wishList));
+    toast.success("Successfull Added !", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  }
+};
+
+export { addToLS, addWishListLS };

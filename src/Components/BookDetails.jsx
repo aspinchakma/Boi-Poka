@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { addToLS } from "./Utilities/LocalStorage";
+import { addToLS, addWishListLS } from "./Utilities/LocalStorage";
 
 const BookDetails = () => {
   const book = useLoaderData();
@@ -18,6 +18,9 @@ const BookDetails = () => {
   } = book;
   const handleAddBook = (id) => {
     addToLS(id);
+  };
+  const handleAddWishList = (id) => {
+    addWishListLS(id);
   };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[48px] my-8">
@@ -70,7 +73,10 @@ const BookDetails = () => {
           >
             Read
           </button>
-          <button className="border-2 bg-[#50b1c9] border-[#50b1c9] rounded-lg px-[22px] py-[8px] font-bold text-white">
+          <button
+            onClick={() => handleAddWishList(bookId)}
+            className="border-2 bg-[#50b1c9] border-[#50b1c9] rounded-lg px-[22px] py-[8px] font-bold text-white cursor-pointer"
+          >
             Wishlist
           </button>
         </div>
