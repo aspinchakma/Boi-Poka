@@ -1,0 +1,19 @@
+.listedBookContainer a {
+  font-weight: bold;
+  border: 2px solid white;
+  border-bottom: 2px solid #b8b8b8;
+  padding: 8px 18px;
+}
+
+.listedBookContainer .active {
+  color: #23be0a;
+  border-top: 2px solid #b8b8b8;
+  border-left: 2px solid #b8b8b8;
+  border-right: 2px solid #b8b8b8;
+  border-bottom: 2px solid white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.listedBookContainer {
+  font-family: "Work Sans", sans-serif;
+}
