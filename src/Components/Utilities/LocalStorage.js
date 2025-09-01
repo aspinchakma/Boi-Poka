@@ -88,4 +88,4 @@ const addWishListLS = (id) => {
   }
 };
 
-export { addToLS, addWishListLS, loadDataLS };
+export { addToLS, addWishListLS, loadDataLS, loadWishList };
