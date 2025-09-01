@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import NoSelectedData from "./NoSelectedData";
 import ReadBook from "./ReadBook";
 import { loadDataLS } from "./Utilities/LocalStorage";
 
@@ -24,9 +25,15 @@ const ReadBooks = () => {
   }, []);
   return (
     <div>
-      {readBooks.map((book) => (
-        <ReadBook book={book} key={book.bookId} />
-      ))}
+      {readBooks.length ? (
+        <div>
+          {readBooks.map((book) => (
+            <ReadBook book={book} key={book.bookId} />
+          ))}
+        </div>
+      ) : (
+        <NoSelectedData />
+      )}
     </div>
   );
 };

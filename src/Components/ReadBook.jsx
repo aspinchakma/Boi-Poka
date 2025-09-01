@@ -17,7 +17,7 @@ const ReadBook = ({ book }) => {
   } = book;
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 my-5 border-2 border-[#dcdcdc] p-5 rounded-lg">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 my-5 border-2 border-[#dcdcdc] p-5 rounded-lg ">
       <div className="bg-[#f3f3f3] rounded-lg flex justify-center items-center py-[29px] lg:py-0">
         <img className="lg:h-[172px] h-[320px]" src={image} alt="" />
       </div>

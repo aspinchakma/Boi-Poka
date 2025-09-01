@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import NoSelectedData from "./NoSelectedData";
 import ReadBook from "./ReadBook";
 import { loadWishList } from "./Utilities/LocalStorage";
 
@@ -24,12 +25,15 @@ const WishListBooks = () => {
   }, []);
   return (
     <div>
-      <h3>This is wish list books</h3>
-      <div>
-        {wishlistBooks.map((book) => (
-          <ReadBook book={book} key={book.bookId} />
-        ))}
-      </div>
+      {wishlistBooks.length ? (
+        <div>
+          {wishlistBooks.map((book) => (
+            <ReadBook book={book} key={book.bookId} />
+          ))}
+        </div>
+      ) : (
+        <NoSelectedData />
+      )}
     </div>
   );
 };
